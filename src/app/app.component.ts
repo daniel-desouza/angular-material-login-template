@@ -17,7 +17,6 @@ export class AppComponent {
     private router: Router,
     private authenticationService: AuthenticationService
   ) {
-    console.log(authenticationService);
     this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
   }
 

@@ -11,14 +11,14 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   getAll() {
-    return this.http.get<User>(`localhost:8080/users`);
+    return this.http.get<User>(`localhost:4200/users`);
   }
 
   register(user: User) {
-    return this.http.post(`localhost:8080/users`, user);
+    return this.http.post(`localhost:4200/users/register`, user);
   }
 
   delete(id: number) {
-    return this.http.delete(`localhost:8080/users/${id}`);
+    return this.http.delete(`localhost:4200/users/${id}`);
   }
 }

@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 
 /* Routing */
-import { AppRoutingModule } from './app-routing.module';
+import { appRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 
@@ -14,16 +14,22 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 /* Http */
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 /* Angular Flex Layout */
 import { FlexLayoutModule } from "@angular/flex-layout";
 
 /* Components */
-import { LogInComponent } from './components/log-in/log-in.component';
-import { RegisterComponent } from './components/register/register.component';
-import { AlertComponent } from './components/alert/alert.component';
-import { HomeComponent } from './components/home/home.component';
+import { LogInComponent } from './components/log-in/';
+import { RegisterComponent } from './components/register/';
+import { AlertComponent } from './components/alert/';
+import { HomeComponent } from './components/home/';
+
+/* Fake Backend */
+import { fakeBackendProvider } from './interceptors/fake-backend-interceptor'
+
+import { JwtInterceptor } from './interceptors/jwt-interceptor';
+import { ErrorInterceptor } from './interceptors/error-interceptor';
 
 
 @NgModule({
@@ -31,14 +37,12 @@ import { HomeComponent } from './components/home/home.component';
     AppComponent,
     LogInComponent,
     RegisterComponent,
-    RegisterComponent,
-    LogInComponent,
     AlertComponent,
     HomeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    appRoutingModule,
     BrowserAnimationsModule,
     AngularMaterialModule,
     ReactiveFormsModule,
@@ -46,7 +50,11 @@ import { HomeComponent } from './components/home/home.component';
     FlexLayoutModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    fakeBackendProvider
+  ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

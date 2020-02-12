@@ -6,7 +6,7 @@ body {
 }
 
 body {
-  background-image: url(C:\Users\dds\Documents\Development\angular-tutorials\other\angular-material-login-template\src\assets\images\mountains_lake_aerial_view_147319_3840x2400.jpg);
+  background-image: url(.\assets\images\mountains_lake_aerial_view_147319_3840x2400.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -108,4 +108,18 @@ body {
 
 .login-wrapper .mat-form-field-appearance-legacy .mat-form-field-infix {
   padding: 0.8375em 0;
+}
+
+.mat-toolbar.mat-primary {
+  background: #0000;
+  color: #fff;
+}
+
+.shadowtext {
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.alert {
+  color: red;
 }
