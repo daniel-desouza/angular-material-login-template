@@ -32,9 +32,9 @@
     "@angular/cli": "~8.0.6",
     "@angular/compiler-cli": "~8.0.3",
     "@angular/language-service": "~8.0.3",
-    "@types/node": "~8.9.4",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~8.9.4",
     "codelyzer": "^5.0.0",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
@@ -47,5 +47,18 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.4.3"
-  }
+  },
+  "description": "Create login and registration UI (User Interface) template with Angular 8, Angular Flex Layout and Material design UI library.",
+  "main": "karma.conf.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daniel-desouza/angular-material-login-template.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daniel-desouza/angular-material-login-template/issues"
+  },
+  "homepage": "https://github.com/daniel-desouza/angular-material-login-template#readme"
 }

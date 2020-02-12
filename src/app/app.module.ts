@@ -13,12 +13,17 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 /* FormsModule */
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+/* Http */
+import { HttpClientModule } from '@angular/common/http';
+
 /* Angular Flex Layout */
 import { FlexLayoutModule } from "@angular/flex-layout";
 
 /* Components */
 import { LogInComponent } from './components/log-in/log-in.component';
 import { RegisterComponent } from './components/register/register.component';
+import { AlertComponent } from './components/alert/alert.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
@@ -27,7 +32,9 @@ import { RegisterComponent } from './components/register/register.component';
     LogInComponent,
     RegisterComponent,
     RegisterComponent,
-    LogInComponent
+    LogInComponent,
+    AlertComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +43,8 @@ import { RegisterComponent } from './components/register/register.component';
     AngularMaterialModule,
     ReactiveFormsModule,
     FormsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],
